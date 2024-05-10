@@ -7,9 +7,12 @@ steps:
 3. Edit the code to set the folder path. (I hard-coded it) and run.
 
 
+
 The output csv is without header. 
 The columns for the search-query are
-InsertID,UserID,TrackerToken,RequestID,Timestamp,Query										
+InsertID,UserID,TrackerToken,Timestamp,Query,										
 
 The columns for the search result are
 InsertID,UserID,TrackerToken,Timestamp,DocId,URL										
+
+For Results, structured results are filtered out. 
