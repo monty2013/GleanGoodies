@@ -27,13 +27,14 @@ def read_json_files(folder_path):
                             print(f"Error reading line in '{json_file}' - Invalid JSON format.")
                             continue
                     ### This is parse the search-result json files ####    
-                    elif "TrackingSignals" in line:    
+                    elif "TrackingSignals" in line and "Results" in line:    
                         try:
                             data = json.loads(line)
 #                            print(os.path.basename(json_file) + "," + data["insertId"])
-                            for r in data["jsonPayload"]["Results"]:
-                                if (r["Id"] != ""):
-                                    ofile.write(data["insertId"]+"," + data["jsonPayload"]["ObfuscatedUserIdentity"]["User"] + ","+r["TrackingSignals"]["search"]["request_token"] +","+ data["timestamp"] +","+r["Id"] +","+r["Url"]+"\n")
+                            if (data["jsonPayload"]["Results"]):
+                                for r in data["jsonPayload"]["Results"]:
+                                    if (r["Id"]):
+                                        ofile.write(data["insertId"]+"," + data["jsonPayload"]["ObfuscatedUserIdentity"]["User"] + ","+r["TrackingSignals"]["search"]["request_token"] +","+ data["timestamp"] +","+r["Id"] +","+r["Url"]+"\n")
                         except json.JSONDecodeError:
                             print(f"Error reading line in '{json_file}' - Invalid JSON format.")
                             continue
