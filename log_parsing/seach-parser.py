@@ -22,7 +22,7 @@ def read_json_files(folder_path):
                         try:
                             data = json.loads(line)
 #                            print(os.path.basename(json_file) + "," + data["insertId"])
-                            ofile.write(data["insertId"]+","+ data["jsonPayload"]["RequestOptions"]["UserIdentity"]["User"] + ","+data["jsonPayload"]["TrackingToken"]+"," + data["jsonPayload"]["RequestOptions"]["RequestID"] +","+ data["receiveTimestamp"] +"," + data["jsonPayload"]["RequestOptions"]["QueryStr"]+"\n")
+                            ofile.write(data["insertId"]+","+ data["jsonPayload"]["RequestOptions"]["UserIdentity"]["User"] + ","+data["jsonPayload"]["TrackingToken"]+"," + data["jsonPayload"]["RequestOptions"]["QueryStr"]+",\n")
                         except json.JSONDecodeError:
                             print(f"Error reading line in '{json_file}' - Invalid JSON format.")
                             continue
