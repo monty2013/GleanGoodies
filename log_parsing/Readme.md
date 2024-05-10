@@ -1,5 +1,5 @@
 This code parses both the search-query or search-result. It outputs to a file output.csv that can be imported into Googlesheet or Excel for filtering.
-The code runs under Python 3.10. This code is free to use or redistribute with or without modifications. No warranty is implied.
+The code runs under Python 3.10. This code is free to use or redistribute with or without modifications. No warranty is implied from the author or anyone from the use of this code.
 
 steps:
 1. Save the code into a folder, say /Users/monty/workspace/gcp/.
